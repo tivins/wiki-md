@@ -1,0 +1,24 @@
+{
+  "name": "wikimd-notes",
+  "version": "1.0.0",
+  "description": "Application locale pour gérer ses notes de cours en Markdown",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start:clean": "powershell -ExecutionPolicy Bypass -File \"kill-ports.ps1\" && npm start",
+    "server": "cd server && npm start",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "dev:clean": "powershell -ExecutionPolicy Bypass -File \"kill-ports.ps1\" && npm run dev",
+    "server:dev": "cd server && npm run dev",
+    "client:dev": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install"
+  },
+  "keywords": ["notes", "markdown", "cours", "education"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
